@@ -1,13 +1,12 @@
 import { getImageUrl } from "@/lib/locations";
-import { LoaderFunctionArgs } from "@remix-run/node";
-import {  useLoaderData } from "@remix-run/react";
+import { unstable_defineLoader as defineLoader } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 import invariant from "tiny-invariant";
 
-
-export function loader({ params }: LoaderFunctionArgs) {
+export const loader = defineLoader(({ params }) => {
   invariant(params.region, "Region is required");
   return { region: params.region };
-}
+});
 
 // display the country with a flag
 export default function CountryRegion() {
