@@ -1,5 +1,6 @@
 import { title } from "@/config.shared";
 import type { MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
 	return [
@@ -11,30 +12,27 @@ export const meta: MetaFunction = () => {
 export default function Index() {
 	return (
 		<main className="container prose py-8">
-			<h1>Welcome to Remix</h1>
+			<h1 className="text-lg">Single Fech Demo ✨</h1>
+
+			<h2 className="text-lg">Where to go ⛖</h2>
 			<ul>
 				<li>
-					<a
-						target="_blank"
-						href="https://remix.run/tutorials/blog"
+					<Link
+						className="text-lg"
+						to="location/brazil/regions"
 						rel="noreferrer"
 					>
-						15m Quickstart Blog Tutorial
-					</a>
+						Brazil 🇧🇷
+					</Link>
 				</li>
 				<li>
-					<a
-						target="_blank"
-						href="https://remix.run/tutorials/jokes"
+					<Link
+						className="text-lg"
+						to="location/denmark/regions"
 						rel="noreferrer"
 					>
-						Deep Dive Jokes App Tutorial
-					</a>
-				</li>
-				<li>
-					<a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-						Remix Docs
-					</a>
+						Denmark 🇩🇰
+					</Link>
 				</li>
 			</ul>
 		</main>
