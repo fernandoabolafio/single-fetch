@@ -21,7 +21,6 @@ export const loader = defineLoader(({ params }) => {
   return { countryNameAndFlag, country: params.country };
 });
 
-// display the country with a flag
 export default function Country() {
   const { countryNameAndFlag, country } = useLoaderData<typeof loader>();
 
