@@ -19,6 +19,7 @@ export default function Country() {
       <div className="flex gap-3">
         {regions.map((region) => (
           <Link
+            key={region}
             to={`${region}`}
             className={`capitalize border p-1 rounded-sm ${
               currentRegion === region
